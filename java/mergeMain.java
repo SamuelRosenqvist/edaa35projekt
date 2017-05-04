@@ -6,7 +6,9 @@ import java.util.LinkedList;
 import java.util.Scanner;
 
 public class mergeMain {
-
+/*
+run with arguments: input file(1) - output file (2) - iterations (3)
+*/
 	public static void main(String[] args) {
 		LinkedList<Integer> intList = new LinkedList<Integer>();
 		String inFile = args[0];

@@ -94,18 +94,25 @@ int main(){
     in.close();
 
 
-    high_resolution_clock::time_point t1 = high_resolution_clock::now();
-    
-        mergesort(numbers, 0, sizeof(numbers) - 1);
-
-    high_resolution_clock::time_point t2 = high_resolution_clock::now();
-
-    auto duration = duration_cast<microseconds>( t2 - t1 ).count();
-
+    // skapar en utfil
     ofstream myfile;
-    myfile.open ("standardMain.txt");
-    myfile << duration << "\n";
+    myfile.open ("mergeMain.txt");
+    
+    for(int i = 0; i < 100; i++){
+
+        high_resolution_clock::time_point t1 = high_resolution_clock::now();
+        
+            mergesort(numbers, 0, sizeof(numbers) - 1);
+
+        high_resolution_clock::time_point t2 = high_resolution_clock::now();
+
+        auto duration = duration_cast<microseconds>( t2 - t1 ).count();
+
+        // skriver till utfilen
+        myfile << duration << "\n";
+    }
+    
+    //stänger utfilen
     myfile.close();
     return 0;
-
 }
