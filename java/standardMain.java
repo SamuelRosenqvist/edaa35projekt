@@ -1,5 +1,3 @@
-package javasort;
-
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -11,9 +9,9 @@ public class standardMain {
 
 	public static void main(String[] args) {
 		LinkedList<Integer> intList = new LinkedList<Integer>();
-		String inFile = args[0];
-		String outFile = args[1];
-		int itrs = Integer.parseInt(args[2]);
+		String inFile = "data1.txt";
+		String outFile = "standardMain.txt";
+		int itrs = 600; //Integer.parseInt(args[2]);
 		
 		/*
 		 * Läser in talen från en fil och lägger de i en lista.

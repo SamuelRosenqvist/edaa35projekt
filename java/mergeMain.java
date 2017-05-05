@@ -10,10 +10,10 @@ public class mergeMain {
 run with arguments: input file(1) - output file (2) - iterations (3)
 */
 	public static void main(String[] args) {
-		LinkedList<Integer> intList = new LinkedList<Integer>();
-		String inFile = args[0];
-		String outFile = args[1];
-		int itrs = Integer.parseInt(args[2]);
+		int[] intList = new int[800];
+		String inFile = "data1.txt";
+		String outFile = "mergeMain.txt";
+		int itrs = 600; //Integer.parseInt(args[2]);
 		
 		/*
 		 * Läser in talen från en fil och lägger de i en lista.
@@ -24,8 +24,10 @@ run with arguments: input file(1) - output file (2) - iterations (3)
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		}
+		int temp = 0;
 		while(scan.hasNext()){
-			intList.add(scan.nextInt());
+			intList[temp] = scan.nextInt();
+			temp++;
 		}
 		
 		/*
@@ -44,15 +46,15 @@ run with arguments: input file(1) - output file (2) - iterations (3)
 		 */
 		for(int n = 0; n < itrs; n++){
             @SuppressWarnings("unchecked")
-			LinkedList<Integer> clonedList = (LinkedList<Integer>) intList.clone();
 			double startTime;
 			double endTime;
 
 			Mergesort sorter = new Mergesort();
+			int[] intListClone = intList.clone();
 
 			startTime = System.nanoTime();
 			
-			sorter.sort(clonedList);
+			sorter.sort(intListClone);
 			
 			endTime = System.nanoTime();
 			double totalTime = endTime - startTime;

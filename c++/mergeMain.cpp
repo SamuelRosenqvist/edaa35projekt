@@ -83,7 +83,7 @@ void mergeSort(int arr[], int l, int r)
 
 int main(){
     vector<int> numbers;
-    ifstream in("data.txt",ios::in);
+    ifstream in("data1.txt",ios::in);
 
     int number;
     
@@ -97,19 +97,21 @@ int main(){
     // skapar en utfil
     ofstream myfile;
     myfile.open ("mergeMain.txt");
+	myfile << "itr" << " time in nanosec \n";
     
-    for(int i = 0; i < 100; i++){
+    for(int i = 0; i < 600; i++){
 
         high_resolution_clock::time_point t1 = high_resolution_clock::now();
         
-            mergesort(numbers, 0, sizeof(numbers) - 1);
+            mergeSort(&numbers[0], 0, numbers.size()-1);
 
         high_resolution_clock::time_point t2 = high_resolution_clock::now();
 
-        auto duration = duration_cast<microseconds>( t2 - t1 ).count();
+        auto duration = duration_cast<nanoseconds>( t2 - t1 ).count();
+
 
         // skriver till utfilen
-        myfile << duration << "\n";
+        myfile << i << ", " << duration << "\n";
     }
     
     //stänger utfilen

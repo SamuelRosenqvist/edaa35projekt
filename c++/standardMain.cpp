@@ -13,10 +13,10 @@ struct myclass {
 int main() {
 
     vector<int> numbers;
-    ifstream in("data.txt",ios::in);
+    ifstream in("data1.txt",ios::in);
 
     int number;
-    
+
     while (in >> number) {
         numbers.push_back(number);
     }
@@ -26,21 +26,22 @@ int main() {
     // skapar en utfil
     ofstream myfile;
     myfile.open ("standardMain.txt");
-    
-    for(int i = 0; i < 100; i++){
+	myfile << "itr" << " time in nanosec \n";
+
+    for(int i = 0; i < 600; i++){
 
         high_resolution_clock::time_point t1 = high_resolution_clock::now();
-        
+
             std::sort (numbers.begin(), numbers.end(), myobject);
 
         high_resolution_clock::time_point t2 = high_resolution_clock::now();
 
-        auto duration = duration_cast<microseconds>( t2 - t1 ).count();
+        auto duration = duration_cast<nanoseconds>( t2 - t1 ).count();
 
         // skriver till utfilen
-        myfile << duration << "\n";
+        myfile << i << ", " << duration << "\n";
     }
-    
+
     //stänger utfilen
     myfile.close();
     return 0;
