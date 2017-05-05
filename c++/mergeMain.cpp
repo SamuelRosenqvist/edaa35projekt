@@ -97,13 +97,15 @@ int main(){
     // skapar en utfil
     ofstream myfile;
     myfile.open ("mergeMain.txt");
-	myfile << "itr" << " time in nanosec \n";
+	myfile << "itr," << " time in nanosec \n";
     
     for(int i = 0; i < 600; i++){
 
+	vector<int> nbrcopy = numbers;	
+
         high_resolution_clock::time_point t1 = high_resolution_clock::now();
         
-            mergeSort(&numbers[0], 0, numbers.size()-1);
+            mergeSort(&nbrcopy[0], 0, nbrcopy.size()-1);
 
         high_resolution_clock::time_point t2 = high_resolution_clock::now();
 
@@ -111,7 +113,7 @@ int main(){
 
 
         // skriver till utfilen
-        myfile << i << ", " << duration << "\n";
+        myfile << (i+1) << ", " << duration << "\n";
     }
     
     //stänger utfilen
