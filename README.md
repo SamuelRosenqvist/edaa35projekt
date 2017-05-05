@@ -6,3 +6,4 @@ Program för att jämföra exekveringstid mellan program i java och c++.
 Algoritmer hittils:
   - Javas och c++ standardsort (java: Collections.sort ; c++: std::sort)
   - Implementation av mergesort (hittade på nätet)
+  - Första 1miljon primtalen
