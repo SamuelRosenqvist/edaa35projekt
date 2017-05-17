@@ -115,7 +115,7 @@
 \ifCLASSINFOpdf
    \usepackage[pdftex]{graphicx}
   % declare the path(s) where your graphic files are
-   \graphicspath{/h/d8/a/sa7638ro-s/edaa35projekt}
+   \graphicspath{{C:/Users/Samulito/Desktop/latex}}
   % and their extensions so you won't have to specify these with
   % every instance of \includegraphics
   \DeclareGraphicsExtensions{.pdf,.jpeg,.png}
@@ -329,7 +329,7 @@
 
 % *** PDF, URL AND HYPERLINK PACKAGES ***
 %
-%\usepackage{url}
+\usepackage{hyperref}
 % url.sty was written by Donald Arseneau. It provides better support for
 % handling and breaking URLs. url.sty is already installed on most LaTeX
 % systems. The latest version and documentation can be obtained at:
@@ -668,36 +668,37 @@ Enligt våra mätningar så kan man dra slutsatsen att Java presterar bättre ä
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=2.5in]{/h/d8/a/sa7638ro-s/edaa35projekt/mergecpp}
+\includegraphics[width=2.5in]{mergecpp}
 \caption{Mergesort i C++}
 \label{fig_merge++}
 \end{figure}
 
-\begin{figure}[h]
+\begin{figure}[!t]
 \centering
-\includegraphics[width=2.5in]{/h/d8/a/sa7638ro-s/edaa35projekt/stdsortcpp}
+\includegraphics[width=2.5in]{stdsortcpp}
 \caption{std::sort i C++}
 \label{fig_std++}
 \end{figure}
 
-\begin{figure}[h]
+\begin{figure}[!t]
 \centering
-\includegraphics[width=2.5in]{/h/d8/a/sa7638ro-s/edaa35projekt/mergeJava}
+\includegraphics[width=2.5in]{mergeJava}
 \caption{Mergesort i Java}
 \label{fig_mergeJava}
 \end{figure}
 
-\begin{figure}[h]
+\begin{figure}[!t]
 \centering
-\includegraphics[width=2.5in]{/h/d8/a/sa7638ro-s/edaa35projekt/standardJava}
+\includegraphics[width=2.5in]{standardJava}
 \caption{Collections.sort i Java}
 \label{fig_collections.sort}
 \end{figure}
 
+\section{Kod}
+Koden har utelämnats för att spara utrymme men kan finnas på \url{https://github.com/Samulito/edaa35projekt}.
+
 % you can choose not to have a title for an appendix
 % if you want by leaving the argument blank
-\section{}
-Appendix two text goes here.
 
 
 % use section* for acknowledgment
@@ -735,9 +736,11 @@ Appendix two text goes here.
 % (used to reserve space for the reference number labels box)
 \begin{thebibliography}{1}
 
-\bibitem{IEEEhowto:kopka}
-H.~Kopka and P.~W. Daly, \emph{A Guide to \LaTeX}, 3rd~ed.\hskip 1em plus
-  0.5em minus 0.4em\relax Harlow, England: Addison-Wesley, 1999.
+\bibitem{Merge sort C++}
+\url{http://quiz.geeksforgeeks.org/merge-sort/} \emph{Implementation av Merge sort i C++.} Hämtad 4 maj, 2017.
+
+\bibitem{Merge sort i Java}
+\url{http://www.vogella.com/tutorials/JavaAlgorithmsMergesort/article.html} \emph{Implementation av Merge sort i Java.}  Hämtad 4 maj, 2017.
 
 \end{thebibliography}
 
