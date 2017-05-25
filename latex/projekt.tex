@@ -115,7 +115,7 @@
 \ifCLASSINFOpdf
    \usepackage[pdftex]{graphicx}
   % declare the path(s) where your graphic files are
-   \graphicspath{{C:/Users/Samulito/Desktop/latex}}
+   \graphicspath{{/h/d8/a/sa7638ro-s/edaa35projekt}}
   % and their extensions so you won't have to specify these with
   % every instance of \includegraphics
   \DeclareGraphicsExtensions{.pdf,.jpeg,.png}
@@ -585,20 +585,26 @@ Programspråk skiljer sig åt på flera sätt och det är därför nödvändigt 
 
 
 \section{Frågeställning}
-Med avseende endast på exekveringstid, vilket programspråk lämpar sig bäst för enkla algoritmer?
+Programspråken som jämförs är Java och C++.
+\begin{itemize}
+\item Vilket programspråks standard sorteringsalgoritm har lägst exekveringstid? 
+\item Vilket programspråk exekverar en implementation av merge sort snabbast? 
+\item Vilket programspråk exekverar en metod för att beräkna de första 1 000 000 primtalen snabbast?
+\end{itemize}
 
 
 
 \section{Metod}
-Algoritmer som jämförts är C++ std::sort och Javas Collections.sort, samt implementering av merge sort och även beräkning av de första en miljon primtalen. Exekveringstiden är uppmätt i programmen med Javas System.nanoTime och i C++ med high\_resolution\_clock från chrono biblioteket. Jämförelser och grafplottar har gjorts i R. Sorteringarna har som indata använt data1.txt från lab5 och har exekverat sorteringen 600 gånger.
+Algoritmer som jämförts är C++ std::sort och Javas Collections.sort, samt implementering av merge sort och även beräkning av de första en miljon primtalen. För att beräkna primtal användes en metod att testa varje tal genom att dela det med tal från 2 upp till roten av varje tal. Exekveringstiden är uppmätt i programmen med Javas System.nanoTime och i C++ med high\_resolution\_clock från chrono biblioteket. Jämförelser och grafplottar har gjorts i R. Sorteringarna har som indata använt data1.txt från lab5 (800 st osorterade tal) och har exekverat sorteringen 600 gånger.
 
 
 \section{Validitetsdiskussion}
 Eftersom vår C++ kunskap ej är på samma nivå som vår Java är det möjligt att C++ inte utnyttjats till sin maximala potential. För att motverka detta har vi försökt använda implementeringar skrivna av vanare C++ användare.
 \\
-Då vi ej har tillräcklig kunskap inom C++ kunde vi inte göra jämförelser på längre och mer komplicerade program, utan fick nöja oss med relativt enkla program vilket kan påverka resultaten. 
+Då vi ej har tillräcklig kunskap inom C++ kunde vi inte göra jämförelser på längre och mer komplicerade program, utan fick nöja oss med relativt enkla program vilket kan påverka resultaten. Vi kan inte heller garantera att det inte skett några minnesläckor vid exekveringen av C++ programmen, flera mätningar gjordes men hotet kan möjligen ha påverkat resultaten till en viss del.
 \\
 För C++ har kompilatorn g++11 använts, det är möjligt att en nyare kompilator hade givit andra resultat men för projektets ändamål är resultaten nöjaktiga.
+
 
 
 
@@ -637,11 +643,15 @@ Vid körning av t.test på resultaten av de båda tidigare nämnda sorteringar i
 \section{Diskussion}
 Enligt erhållna resultat så är Java snabbare än C++. Vid standardsorteringarna var Java ca 1,2 gånger snabbare (se tabell \ref{res}) och vid mergesort var Java ca 2,7 gånger snabbare. Dessa resultat var väldigt förvånande för oss då vi forväntade oss att C++ skulle vara snabbare. Enligt lite egen forskning innan projektets start har vi läst att C++ fortfarande är snabbare än Java. Det är mycket möjligt att C++ är snabbare än Java bara att testerna som kördes gav Java en fördel. 
 \\
+Medelvärdena är över alla 600 iterationer, både C++ och Java har ett visst insvängningsförlopp som kan ses i Figur 1 och 3 respektive Figur 2 och 4, de båda Java metoderna når ett jämnviktsläge runt iteration 300 medan C++ metodernas exekveringstid fortsätter att sjunka under hela förloppet. För att försöka vara rättvisa har medelvärdet beräknats som det gjort, programspråkens effektivitet gäller både uppstarten och jämnviktsförloppen.
+\\
 Våra tester var väldigt primitiva och kan ej tolkas som ett direkt svar till vilket språk som är snabbast vid t.ex. 3D-modellering. Resultaten pekar däremot på att Java är ett väldigt bra språk att använda när man ska utföra mindre beräkningar av t.ex. primtal eller sorteringar. När Java och C++ fick nästan identisk kod (Fast på de olika språken) där de skulle räkna ut de första 1 000 000 primtalen var Java ca 2 gånger snabbare. C++ är ett hårdvarunäraspråk vilket gör att bättre optimering för det använda systemet kan göras, detta har dock inte gjorts i testerna vilket också kan vara en anledning till C++ dåliga resultat gämtemot Javas.  Värt att notera är att Java kommer bli lättare att optimera för alla system då Java använder sig av JVM (Java virtual machine) och kan därför ses som bättre vid implementering av enkla algoritmer.
 
 
 \section{Slutsatser}
-Enligt våra mätningar så kan man dra slutsatsen att Java presterar bättre än C++ i samtliga jämförelser. 
+Enligt våra mätningar så kan man dra slutsatsen att Java presterar bättre än C++ i samtliga jämförelser. Vid beräkning av primtal är Java överlägset i våra mätningar trots att i stort sett identiska metoder använts.
+\\
+Vid exekvering av merge sort är Java också bra mycket snabbare än C++. Dock är skillnaden i exekveringstiden  liten mellan Javas och C++ standardsorteringar, eftersom det antagligen är den som oftast används i praktiska sammanhang kan argumentet göras att programspråken står på någorlunda lika nivå.
 
 
 
